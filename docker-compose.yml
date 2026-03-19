@@ -1,0 +1,76 @@
+# To run the system locally:
+# 1. Start infrastructure services: docker compose up -d postgres redis
+# 2. Run the application with: pnpm dev
+# Or start everything together with: docker compose up
+services:
+  # TODO: Rename this service to match your project name
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      target: development
+    container_name: rest-boilerplate-dev
+    ports:
+      - "3000:3000"
+    environment:
+      NODE_ENV: development
+      PORT: 3000
+      LOG_LEVEL: debug
+    env_file:
+      - .env
+    volumes:
+      # Only exclude node_modules to avoid conflicts
+      - /app/node_modules
+      - .:/app
+    networks:
+      - app-network
+    command: ["pnpm", "dev"]
+    depends_on:
+      - postgres
+      - redis
+
+  postgres:
+    image: postgres:17
+    container_name: rest-boilerplate-postgres
+    restart: always
+    ports:
+      - "5432:5432"
+    environment:
+      POSTGRES_DB: "${POSTGRES_DB}"
+      POSTGRES_USER: "${POSTGRES_USER}"
+      POSTGRES_PASSWORD: "${POSTGRES_PASSWORD}"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    networks:
+      - app-network
+
+  redis:
+    image: redis:7-alpine
+    container_name: rest-boilerplate-redis
+    ports:
+      - "6379:6379"
+    volumes:
+      - redis_data:/data
+    networks:
+      - app-network
+
+  # Uncomment to enable Pub/Sub emulator for local development
+  # pubsub-emulator:
+  #   image: thekevjames/gcloud-pubsub-emulator:latest
+  #   container_name: pubsub-emulator
+  #   ports:
+  #     - "8681:8681"
+  #   environment:
+  #     # TODO: Update topics and subscriptions for your project
+  #     - PUBSUB_PROJECT1=test-project,events-topic
+
+volumes:
+  postgres_data:
+    driver: local
+  redis_data:
+    driver: local
+
+networks:
+  # TODO: Rename the network to match your project
+  app-network:
+    driver: bridge

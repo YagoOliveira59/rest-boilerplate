@@ -1,0 +1,33 @@
+{
+  "compilerOptions": {
+    "lib": ["es2022"],
+    "module": "esnext",
+    "target": "es2022",
+    "moduleResolution": "node",
+    "strict": true,
+    "allowUnreachableCode": false,
+    "exactOptionalPropertyTypes": true,
+    "noFallthroughCasesInSwitch": true,
+    "noImplicitOverride": true,
+    "noPropertyAccessFromIndexSignature": true,
+    "noUncheckedIndexedAccess": true,
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true,
+    "noEmit": true,
+    "resolveJsonModule": true,
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "isolatedModules": true,
+    "removeComments": true,
+    "typeRoots": ["./node_modules/@types", "./@types"],
+    "baseUrl": "./",
+    "outDir": "./build",
+    "paths": {
+      "@/*": ["src/*"]
+    }
+  },
+  "include": ["src", "tsup.config.ts"],
+  "exclude": ["node_modules", "build"]
+}

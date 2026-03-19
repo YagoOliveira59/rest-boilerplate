@@ -1,0 +1,15 @@
+node_modules
+build
+dist
+coverage
+.env
+.env.*
+*.env
+.git
+.gitignore
+.eslintrc*
+.prettierrc*
+README.md
+CHANGELOG.md
+CONTRIBUTING.md
+docs

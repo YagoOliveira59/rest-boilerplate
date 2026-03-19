@@ -1,0 +1,31 @@
+{
+  "version": "0.2",
+  "language": "en",
+  "words": [
+    "tsyringe",
+    "uuidv7",
+    "pino",
+    "tsup",
+    "remeda",
+    "zod",
+    "opentelemetry",
+    "otel",
+    "pubsub",
+    "knip",
+    "supertest",
+    "cspell",
+    "deadlock",
+    "middlewares",
+    "dumb",
+    "prisma",
+    "postgresql",
+    "cloudsql"
+  ],
+  "ignorePaths": [
+    "node_modules/**",
+    "build/**",
+    "coverage/**",
+    "pnpm-lock.yaml",
+    ".env*"
+  ]
+}

@@ -1,0 +1,14 @@
+// TODO: Replace this model with your actual domain entity's schema.
+// Copy this file and rename it for each new entity.
+// Run `pnpm prisma:migrate` to create migration files.
+
+model Example {
+  id          String   @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
+  name        String   @unique @db.VarChar(255)
+  description String?  @db.VarChar(1000)
+  active      Boolean  @default(true)
+  created_at  DateTime @default(now()) @map("created_at")
+  updated_at  DateTime @updatedAt @map("updated_at")
+
+  @@map("examples")
+}
