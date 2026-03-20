@@ -2,8 +2,6 @@
 
 A production-ready REST API boilerplate built with **Clean Architecture**, **TypeScript**, **Express 5**, **Prisma**, and **OpenTelemetry**.
 
-Generated from the `billing-api` project — all business logic removed, generic `Example` entity serves as the template.
-
 ---
 
 ## Stack
