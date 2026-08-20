@@ -60,26 +60,26 @@
     "knip": "5.64.1",
     "pino-pretty": "13.1.1",
     "prettier": "3.6.2",
-    "prisma": "6.17.1",
+    "prisma": "^6.12.0",
     "supertest": "7.1.4",
     "ts-jest": "29.4.4",
     "tsup": "8.5.0",
-    "tsx": "4.19.2",
+    "tsx": "^4.23.12",
     "typescript": "5.9.3",
     "typescript-eslint": "8.46.0"
   },
   "dependencies": {
-    "@google-cloud/opentelemetry-cloud-monitoring-exporter": "^0.21.0",
+    "@google-cloud/opentelemetry-cloud-monitoring-exporter": "^0.22.0",
     "@google-cloud/opentelemetry-cloud-trace-exporter": "^3.0.0",
     "@google-cloud/pino-logging-gcp-config": "1.2.0",
-    "@google-cloud/pubsub": "5.2.0",
+    "@google-cloud/pubsub": "^5.0.0",
     "@opentelemetry/api": "^1.9.0",
-    "@opentelemetry/auto-instrumentations-node": "^0.66.0",
+    "@opentelemetry/auto-instrumentations-node": "^0.79.0",
     "@opentelemetry/context-async-hooks": "^2.2.0",
     "@opentelemetry/instrumentation": "^0.207.0",
     "@opentelemetry/resources": "^2.2.0",
     "@opentelemetry/sdk-metrics": "^2.2.0",
-    "@opentelemetry/sdk-node": "^0.207.0",
+    "@opentelemetry/sdk-node": "^0.221.0",
     "@opentelemetry/sdk-trace-node": "^2.2.0",
     "@opentelemetry/semantic-conventions": "^1.37.0",
     "@prisma/client": "6.16.2",
@@ -100,7 +100,7 @@
   },
   "packageManager": "pnpm@10.14.0",
   "engines": {
-    "node": "~22.17",
+    "node": "~24.19",
     "pnpm": "~10.14"
   }
 }
